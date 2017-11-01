@@ -1,3 +1,5 @@
+package LinkedList;
+
 import Framework.*;
 
 class LinkedNode

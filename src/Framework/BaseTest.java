@@ -22,7 +22,7 @@ public class BaseTest
             } 
             catch (Exception e)
             {
-                Utility.Print(e.getMessage());
+                Utility.Print(e);
             }
         }
     }

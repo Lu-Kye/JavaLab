@@ -10,7 +10,15 @@ public class Utility
         }
         catch (Exception e)
         {
-            System.out.println(String.format("Print error e(%s)", e.getMessage()));
+            Print(e);
+        }
+    }
+
+    public static void Print(Exception e) 
+    {
+        System.out.println(String.format("Exception e(%s)", e.getMessage()));
+        for (StackTraceElement ste : e.getStackTrace()) {
+            System.out.println(ste.toString());
         }
     }
 
@@ -37,5 +45,23 @@ public class Utility
         }
         sb.append("]");
         return sb.toString();
+    }
+
+    public static Integer GetInteger(char[] cs, Integer[] startWrapper)
+    {
+        Integer number = 0;
+        int i = startWrapper[0];
+        for (; i < cs.length; ++i)
+        {
+            char c = cs[i];
+            if (c >= '0' && c <= '9')
+            {
+                number = number * 10 + (c - '0');
+                continue;
+            }
+            break; 
+        }
+        startWrapper[0] = i;
+        return number;
     }
 }

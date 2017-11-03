@@ -1,5 +1,8 @@
 package Framework;
 
+import java.lang.*;
+import java.util.*;
+
 public class Utility 
 {
     public static void Print(String msg) 
@@ -32,6 +35,23 @@ public class Utility
             array[array.length - 1 - i] = temp;
         }
         return array;
+    }
+
+    @SuppressWarnings({"unchecked"})
+    public static <T> ArrayList<T> ToArrayList(int[] array, ArrayList<T> list)
+    {
+        for (int i = 0; i < array.length; ++i)
+        {
+            list.add((T)(new Integer(array[i])));
+        }
+        return list;
+    }
+
+    public static String ToString(int[] array)
+    {
+        ArrayList<Object> list = new ArrayList<Object>();
+        Object[] objArray = ToArrayList(array, list).toArray();
+        return ToString(objArray);
     }
 
     public static <T> String ToString(T[] array)

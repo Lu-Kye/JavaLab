@@ -16,9 +16,9 @@ public class BaseTest
             
             try
             {
-                Utility.Print(methodName + " Begin");
+                Utility.Print(String.format("================\n%s\n================", methodName));
                 method.invoke(this, new Object[0]);
-                Utility.Print(methodName + " End");
+                Utility.Print("");
             } 
             catch (Exception e)
             {

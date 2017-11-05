@@ -84,4 +84,26 @@ public class Utility
         startWrapper[0] = i;
         return number;
     }
+
+    public static boolean Contains(ArrayList<ArrayList<Integer>> lists, ArrayList<Integer> list)
+    {
+        for (int i = 0; i < lists.size(); ++i) 
+        {
+            if (lists.get(i).size() != list.size())
+                continue;
+
+            boolean same = true;
+            for (int j = 0; j < lists.get(i).size(); ++j)
+            {
+                if (lists.get(i).get(j) != list.get(j))
+                {
+                    same = false;
+                    break;
+                }
+            }
+            if (same == true)
+                return true;
+        }
+        return false;
+    }
 }

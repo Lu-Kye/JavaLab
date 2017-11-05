@@ -169,6 +169,11 @@ public class Main extends BaseTest
         Utility.Print("WiggleLen: " + wiggleLen);
     }
 
+    public void TestShoot()
+    {
+        // int[]
+    }
+
     public static void main(String[] args)
     {
         Main test = new Main();
